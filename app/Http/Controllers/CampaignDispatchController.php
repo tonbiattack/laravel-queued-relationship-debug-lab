@@ -22,7 +22,7 @@ class CampaignDispatchController extends Controller
             'subscriber_ids' => $subscriberIds,
         ]);
 
-        DeliverCampaign::dispatch($campaign);
+        DeliverCampaign::dispatch($campaign->id, $subscriberIds);
 
         return response()->json([
             'campaign_id' => $campaign->id,
